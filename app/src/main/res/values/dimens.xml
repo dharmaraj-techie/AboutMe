@@ -2,4 +2,5 @@
 <resources>
     <dimen name="small_padding">8dp</dimen>
     <dimen name="layout_margin">16dp</dimen>
+    <item name="line_spacing" format="float" type="dimen">1.2</item>
 </resources>

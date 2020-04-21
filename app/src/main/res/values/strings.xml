@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">About Me</string>
     <string name="name">Dharmaraj</string>
+    <string name="yellow_str">yellow_star_image</string>
+    <string name="bio_string">hi\n this is a test app build with kotlin in android studio to learn
+        android development \n \n So far the course is pretty good\n this app is for learning
+    layouts \n hope will learn a lot from this course and\n become a good android developer
+    \n\n also I want to develop great apps that user loves \n and have a great life \n I like surprising people
+    by my success and make them wonder how he did that</string>
+    <string name="nick_name_hint">what is your nick name?</string>
+    <string name="done_btn">Done</string>
 </resources>
