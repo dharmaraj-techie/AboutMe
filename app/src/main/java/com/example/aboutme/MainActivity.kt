@@ -8,6 +8,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.databinding.DataBindingUtil
 import com.example.aboutme.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -15,20 +16,21 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
+//        binding = ActivityMainBinding.inflate(layoutInflater)
+//        setContentView(binding.root)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.doneBtn.setOnClickListener { addNickName(it) }
     }
 
     private fun addNickName(view: View) {
 
-        view.visibility = View.GONE
-
-        binding.nickNameTv.text = binding.nickNameEdit.text
-        binding.nickNameEdit.visibility = View.GONE
-        binding.nickNameTv.visibility = View.VISIBLE
-
+        binding.apply {
+            view.visibility = View.GONE
+            invalidateAll()
+            binding.nickNameTv.text = binding.nickNameEdit.text
+            binding.nickNameEdit.visibility = View.GONE
+            binding.nickNameTv.visibility = View.VISIBLE
+        }
         // Hide the keyboard.
         val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(view.windowToken, 0)
