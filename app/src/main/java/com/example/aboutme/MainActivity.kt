@@ -32,11 +32,11 @@ class MainActivity : AppCompatActivity() {
         binding.apply {
             view.visibility = View.GONE
 
-            myName?.nickname = nickNameEdit.text.toString()
+            myName?.nickname = binding.nickNameEdit.text.toString()
 
             invalidateAll()
 
-            binding.nickNameTv.text = binding.nickNameEdit.text
+//            binding.nickNameTv.text = myName.nickname
             binding.nickNameEdit.visibility = View.GONE
             binding.nickNameTv.visibility = View.VISIBLE
         }
